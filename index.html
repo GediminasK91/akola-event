@@ -357,110 +357,24 @@
     </div>
     <script>
     (function() {
-      var h = '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:580px;font-family:Arial,sans-serif;">'
-
-        // Cyan bar
-        + '<tr><td style="background:#19C8E1;height:4px;font-size:0;">&nbsp;</td></tr>'
-
-        // Navy header
-        + '<tr><td align="center" style="padding:32px 28px 26px;background:#193264;">'
-        + '<p style="margin:0 0 6px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#19C8E1;">Akola Group &middot; 35</p>'
-        + '<p style="margin:0;font-size:30px;color:#fff;font-weight:700;letter-spacing:1px;">KVIETIMAS</p>'
-        + '<p style="margin:5px 0 0;font-size:14px;color:#A8C8E0;font-weight:300;letter-spacing:4px;">INVITATION</p>'
-        + '<div style="width:50px;height:3px;background:#19C8E1;margin:14px auto 0;"></div>'
-        + '</td></tr>'
-
-        // Date band
-        + '<tr><td align="center" style="background:#19C8E1;padding:8px 28px;">'
-        + '<p style="margin:0;font-size:10px;letter-spacing:3px;color:#193264;text-transform:uppercase;font-weight:700;">2026 m. spalio 15 d. &middot; 15 October 2026 &middot; Vilnius</p>'
-        + '</td></tr>'
-
-        // Content
-        + '<tr><td style="padding:24px 28px 14px;background:#fff;">'
-        + '<table width="100%" cellpadding="0" cellspacing="0" border="0">'
-
-        // Greeting
-        + '<tr>'
-        + '<td width="47%" valign="top" style="padding:0 12px 10px 0;border-right:1px solid #C8D8E8;"><p style="margin:0;font-size:13px;color:#193264;font-weight:600;">Gerbiamieji,</p></td>'
-        + '<td width="6%"></td>'
-        + '<td width="47%" valign="top" style="padding:0 0 10px 12px;"><p style="margin:0;font-size:13px;color:#193264;font-weight:600;">Dear colleagues,</p></td>'
-        + '</tr>'
-
-        // Main paragraph
-        + '<tr>'
-        + '<td valign="top" style="padding:0 12px 8px 0;border-right:1px solid #C8D8E8;">'
-        + '<p style="margin:0;font-size:12px;color:#2A3A55;line-height:1.7;">maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2014 <b style="color:#193264;">Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</p></td>'
-        + '<td></td>'
-        + '<td valign="top" style="padding:0 0 8px 12px;">'
-        + '<p style="margin:0;font-size:12px;color:#2A3A55;line-height:1.7;">We are pleased to invite you to a special occasion \u2014 the celebration of <b style="color:#193264;">Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</p></td>'
-        + '</tr>'
-
-        // 35 years
-        + '<tr>'
-        + '<td valign="top" style="padding:0 12px 8px 0;border-right:1px solid #C8D8E8;">'
-        + '<p style="margin:0;font-size:12px;color:#2A3A55;line-height:1.7;">35 metai \u2014 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</p></td>'
-        + '<td></td>'
-        + '<td valign="top" style="padding:0 0 8px 12px;">'
-        + '<p style="margin:0;font-size:12px;color:#2A3A55;line-height:1.7;">35 years is a story of decisions, people, and a shared journey we have taken together.</p></td>'
-        + '</tr>'
-
-        // Your presence
-        + '<tr>'
-        + '<td valign="top" style="padding:0 12px 14px 0;border-right:1px solid #C8D8E8;">'
-        + '<p style="margin:0;font-size:12px;color:#2A3A55;line-height:1.7;">J\u016Bs\u0173 buvimas \u2014 svarbi \u0161ios istorijos dalis.</p></td>'
-        + '<td></td>'
-        + '<td valign="top" style="padding:0 0 14px 12px;">'
-        + '<p style="margin:0;font-size:12px;color:#2A3A55;line-height:1.7;">Your presence is an important part of this story.</p></td>'
-        + '</tr>'
-
-        // Info boxes
-        + '<tr>'
-        + '<td valign="top" style="padding:0 12px 14px 0;border-right:1px solid #C8D8E8;">'
-        + '<table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#EDF3F8;border-left:3px solid #19C8E1;">'
-        + '<tr><td style="padding:6px 10px 2px;font-size:11px;color:#193264;">&#128197; <b>Data:</b> 2026 m. spalio 15 d.</td></tr>'
-        + '<tr><td style="padding:2px 10px;font-size:11px;color:#193264;">&#128342; <b>Laikas:</b> nuo 19 val.</td></tr>'
-        + '<tr><td style="padding:2px 10px 6px;font-size:11px;color:#193264;">&#128205; <b>Vieta:</b> Vilnius</td></tr>'
-        + '</table></td>'
-        + '<td></td>'
-        + '<td valign="top" style="padding:0 0 14px 12px;">'
-        + '<table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#EDF3F8;border-left:3px solid #19C8E1;">'
-        + '<tr><td style="padding:6px 10px 2px;font-size:11px;color:#193264;">&#128197; <b>Date:</b> 15 October 2026</td></tr>'
-        + '<tr><td style="padding:2px 10px;font-size:11px;color:#193264;">&#128342; <b>Time:</b> from 7:00 PM</td></tr>'
-        + '<tr><td style="padding:2px 10px 6px;font-size:11px;color:#193264;">&#128205; <b>Location:</b> Vilnius</td></tr>'
-        + '</table></td>'
-        + '</tr>'
-
-        // Reserve + details
-        + '<tr>'
-        + '<td valign="top" style="padding:0 12px 6px 0;border-right:1px solid #C8D8E8;">'
-        + '<p style="margin:0;font-size:11px;color:#556677;line-height:1.6;">Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</p></td>'
-        + '<td></td>'
-        + '<td valign="top" style="padding:0 0 6px 12px;">'
-        + '<p style="margin:0;font-size:11px;color:#556677;line-height:1.6;">Please reserve this date in your calendar already now.</p></td>'
-        + '</tr>'
-        + '<tr>'
-        + '<td valign="top" style="padding:0 12px 0 0;border-right:1px solid #C8D8E8;">'
-        + '<p style="margin:0;font-size:11px;color:#556677;line-height:1.6;">I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</p></td>'
-        + '<td></td>'
-        + '<td valign="top" style="padding:0 0 0 12px;">'
-        + '<p style="margin:0;font-size:11px;color:#556677;line-height:1.6;">Detailed information and registration will follow at a later stage.</p></td>'
-        + '</tr>'
-
-        + '</table></td></tr>'
-
-        // Signature
-        + '<tr><td style="padding:14px 28px 18px;background:#fff;">'
-        + '<div style="border-top:1px solid #C8D8E8;padding-top:14px;">'
-        + '<p style="margin:0 0 2px;font-size:14px;font-weight:700;color:#193264;">Darius Zubas</p>'
-        + '<p style="margin:0;font-size:10px;color:#19C8E1;letter-spacing:1px;text-transform:uppercase;">Akola group valdybos pirmininkas &middot; Chairman of the Board, Akola Group</p>'
-        + '</div></td></tr>'
-
-        // Footer
-        + '<tr><td style="background:#193264;padding:12px 28px;text-align:center;">'
-        + '<p style="margin:0;font-size:9px;letter-spacing:2px;color:#19C8E1;text-transform:uppercase;">&copy; 2026 Akola Group &middot; All rights reserved</p>'
-        + '</td></tr>'
-
-        + '</table>';
+      var b = 'AKOLA GROUP \u00b7 35\n'
+        + 'KVIETIMAS / INVITATION\n\n'
+        + 'Gerbiamieji,\n\n'
+        + 'Maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2014 Akola group 35-ojo jubiliejaus min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.\n'
+        + '35 metai \u2014 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.\n'
+        + 'J\u016Bs\u0173 buvimas \u2014 svarbi \u0161ios istorijos dalis.\n\n'
+        + '---\n\n'
+        + 'Dear colleagues,\n\n'
+        + 'We are pleased to invite you to a special occasion \u2014 the celebration of Akola Group\u2019s 35th anniversary, where we will be delighted to welcome you together with your spouse or partner.\n'
+        + '35 years is a story of decisions, people, and a shared journey we have taken together.\n'
+        + 'Your presence is an important part of this story.\n\n'
+        + '---\n\n'
+        + 'Data / Date: 2026 m. spalio 15 d. / 15 October 2026\n'
+        + 'Laikas / Time: 19:00\u201323:45\n'
+        + 'Vieta / Location: Vilnius\n\n'
+        + 'Darius Zubas\n'
+        + 'Akola group valdybos pirmininkas \u00b7 Chairman of the Board, Akola Group\n\n'
+        + 'https://gediminask91.github.io/akola-event/';
 
       var url = 'https://outlook.office.com/calendar/0/action/compose'
         + '?rru=addevent'
@@ -468,7 +382,7 @@
         + '&startdt=2026-10-15T16:00:00Z'
         + '&enddt=2026-10-15T20:45:00Z'
         + '&location=' + encodeURIComponent('Vilnius')
-        + '&body=' + encodeURIComponent(h);
+        + '&body=' + encodeURIComponent(b);
 
       document.getElementById('calBtn').href = url;
     })();
