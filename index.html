@@ -7,53 +7,36 @@
 <body>
 <script>
 (function() {
-  var S='font-family:Arial,sans-serif;';
-  var L='valign="top" width="48%" style="padding:20px 24px;border-right:1px solid #C8D8E8;font-size:14px;color:#2A3A55;line-height:1.85;'+S+'"';
-  var R='valign="top" width="48%" style="padding:20px 24px;font-size:14px;color:#2A3A55;line-height:1.85;'+S+'"';
-  var b = '<table align="center" border="0" cellpadding="0" cellspacing="0" width="620" style="max-width:620px;background:#fff;border:1px solid #C8D8E8;'+S+'">'
-    + '<tr><td colspan="2" style="background:#19C8E1;height:5px;font-size:0;">&nbsp;</td></tr>'
-    + '<tr><td colspan="2" align="center" style="background:#193264;padding:40px 24px 34px;">'
-    + '<div style="font-size:12px;letter-spacing:5px;color:#19C8E1;">AKOLA GROUP \u00b7 35</div>'
-    + '<div style="font-size:36px;color:#fff;font-weight:bold;margin:8px 0 6px;">KVIETIMAS</div>'
-    + '<div style="font-size:16px;color:#A8C8E0;letter-spacing:5px;">INVITATION</div>'
-    + '<div style="width:60px;height:3px;background:#19C8E1;margin:18px auto 0;"></div>'
+  var L='valign="top" style="padding:10px 14px;border-right:1px solid #ccc;"';
+  var R='valign="top" style="padding:10px 14px;"';
+  var b = '<table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;background:#fff;border:1px solid #C8D8E8;">'
+    + '<tr><td colspan="2" style="background:#19C8E1;height:4px;font-size:0;">&nbsp;</td></tr>'
+    + '<tr><td colspan="2" align="center" style="background:#193264;padding:28px 16px;">'
+    + '<div style="font-size:11px;letter-spacing:4px;color:#19C8E1;">AKOLA GROUP \u00b7 35</div>'
+    + '<div style="font-size:30px;color:#fff;font-weight:bold;margin:6px 0;">KVIETIMAS</div>'
+    + '<div style="font-size:14px;color:#A8C8E0;letter-spacing:4px;">INVITATION</div>'
     + '</td></tr>'
-    + '<tr><td colspan="2" align="center" style="background:#19C8E1;padding:10px 20px;">'
-    + '<span style="font-size:11px;letter-spacing:3px;color:#193264;font-weight:bold;">2026 M. SPALIO 15 D. \u00b7 15 OCTOBER 2026 \u00b7 VILNIUS</span>'
+    + '<tr><td colspan="2" align="center" style="background:#19C8E1;padding:7px;">'
+    + '<b style="font-size:10px;letter-spacing:2px;color:#193264;">2026 M. SPALIO 15 D. \u00b7 15 OCTOBER 2026 \u00b7 VILNIUS</b>'
     + '</td></tr>'
-    // Row: Greeting
-    + '<tr><td '+L+'><b style="color:#193264;font-size:15px;">Gerbiamieji,</b></td>'
-    + '<td '+R+'><b style="color:#193264;font-size:15px;">Dear colleagues,</b></td></tr>'
-    // Row: Main paragraph
-    + '<tr><td '+L+'>Maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2013 <b style="color:#193264;">Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
-    + '<td '+R+'>We are pleased to invite you to a special occasion \u2013 the celebration of <b style="color:#193264;">Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
-    // Row: 35 years
+    + '<tr><td '+L+'><b>Gerbiamieji,</b></td><td '+R+'><b>Dear colleagues,</b></td></tr>'
+    + '<tr><td '+L+'>Maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2013 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
+    + '<td '+R+'>We are pleased to invite you to a special occasion \u2013 the celebration of <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
     + '<tr><td '+L+'>35 metai \u2013 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</td>'
     + '<td '+R+'>35 years is a story of decisions, people, and a shared journey we have taken together.</td></tr>'
-    // Row: Your presence
     + '<tr><td '+L+'>J\u016Bs\u0173 buvimas \u2013 svarbi \u0161ios istorijos dalis.</td>'
     + '<td '+R+'>Your presence is an important part of this story.</td></tr>'
-    // Row: Info box
-    + '<tr><td style="padding:12px 18px;border-right:1px solid #C8D8E8;background:#EDF3F8;font-size:13px;color:#193264;line-height:1.8;">'
-    + '\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
-    + '<td style="padding:12px 18px;background:#EDF3F8;font-size:13px;color:#193264;line-height:1.8;">'
-    + '\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
-    // Row: Reserve
-    + '<tr><td '+L+' style="padding:16px 24px;border-right:1px solid #C8D8E8;font-size:13px;color:#556677;line-height:1.8;">Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</td>'
-    + '<td '+R+' style="padding:16px 24px;font-size:13px;color:#556677;line-height:1.8;">Please reserve this date in your calendar already now.</td></tr>'
-    // Row: Details
-    + '<tr><td '+L+' style="padding:4px 24px 16px;border-right:1px solid #C8D8E8;font-size:13px;color:#556677;line-height:1.8;">I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</td>'
-    + '<td '+R+' style="padding:4px 24px 16px;font-size:13px;color:#556677;line-height:1.8;">Detailed information and registration will follow at a later stage.</td></tr>'
-    // Row: Signature
-    + '<tr><td colspan="2" style="padding:16px 24px;border-top:1px solid #C8D8E8;">'
-    + '<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>'
-    + '<td width="48%" valign="top" style="padding-right:18px;"><b style="color:#193264;font-size:15px;">Darius Zubas</b><br><span style="color:#19C8E1;font-size:10px;letter-spacing:1px;">AKOLA GROUP VALDYBOS PIRMININKAS</span></td>'
-    + '<td width="48%" valign="top" style="padding-left:18px;"><b style="color:#193264;font-size:15px;">Darius Zubas</b><br><span style="color:#19C8E1;font-size:10px;letter-spacing:1px;">CHAIRMAN OF THE BOARD, AKOLA GROUP</span></td>'
-    + '</tr></table></td></tr>'
-    + '<tr><td colspan="2" align="center" style="background:#193264;padding:14px 20px;">'
-    + '<span style="font-size:10px;letter-spacing:2px;color:#19C8E1;">\u00a9 2026 AKOLA GROUP \u00b7 ALL RIGHTS RESERVED</span>'
-    + '</td></tr>'
-    + '</table>';
+    + '<tr><td '+L+' style="padding:10px 14px;border-right:1px solid #ccc;background:#EDF3F8;">\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
+    + '<td '+R+' style="padding:10px 14px;background:#EDF3F8;">\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
+    + '<tr><td '+L+' style="padding:10px 14px;border-right:1px solid #ccc;color:#667;">Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</td>'
+    + '<td '+R+' style="padding:10px 14px;color:#667;">Please reserve this date in your calendar already now.</td></tr>'
+    + '<tr><td '+L+' style="padding:10px 14px;border-right:1px solid #ccc;color:#667;">I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</td>'
+    + '<td '+R+' style="padding:10px 14px;color:#667;">Detailed information and registration will follow at a later stage.</td></tr>'
+    + '<tr><td '+L+' style="padding:10px 14px;border-right:1px solid #ccc;border-top:1px solid #ccc;"><b>Darius Zubas</b><br><span style="color:#19C8E1;font-size:10px;">Akola group valdybos pirmininkas</span></td>'
+    + '<td '+R+' style="padding:10px 14px;border-top:1px solid #ccc;"><b>Darius Zubas</b><br><span style="color:#19C8E1;font-size:10px;">Chairman of the Board, Akola Group</span></td></tr>'
+    + '<tr><td colspan="2" align="center" style="background:#193264;padding:10px;">'
+    + '<span style="font-size:9px;letter-spacing:1px;color:#19C8E1;">\u00a9 2026 AKOLA GROUP</span>'
+    + '</td></tr></table>';
 
   window.location.href =
     'https://outlook.office.com/calendar/deeplink/compose'
