@@ -353,8 +353,65 @@
     <!-- CALENDAR BUTTON -->
     <div class="calendar-section">
       <p class="label">Save the Date &nbsp;&middot;&nbsp; Išsisaugokite šį renginį savo kalendoriuje</p>
-      <a class="cal-btn" href="https://gediminask91.github.io/akola-event/akola-35-anniversary.ics">&#128197;&ensp;Add to Calendar &nbsp;/&nbsp; Įtraukti į kalendorių</a>
+      <a class="cal-btn" id="calBtn" href="#" target="_blank">&#128197;&ensp;Add to Calendar &nbsp;/&nbsp; Įtraukti į kalendorių</a>
     </div>
+    <script>
+    (function() {
+      var body = [
+        'AKOLA GROUP · 35',
+        'KVIETIMAS / INVITATION',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━',
+        '',
+        'Gerbiamieji,',
+        '',
+        'maloniai kviečiame į ypatingą progą — Akola group 35-ojo jubiliejaus minėjimą, kuriame lauksime Jūsų kartu su Jūsų antrąja puse.',
+        '',
+        '35 metai — tai sprendimai, žmonės ir bendras kelias, kuriuo ėjome kartu.',
+        '',
+        'Jūsų buvimas — svarbi šios istorijos dalis.',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━',
+        '',
+        'Dear colleagues,',
+        '',
+        'We are pleased to invite you to a special occasion — the celebration of Akola Group\u2019s 35th anniversary, where we will be delighted to welcome you together with your spouse or partner.',
+        '',
+        '35 years is a story of decisions, people, and a shared journey we have taken together.',
+        '',
+        'Your presence is an important part of this story.',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━',
+        '',
+        'Data / Date: 2026 m. spalio 15 d. / 15 October 2026',
+        'Laikas / Time: nuo 19:00 val. / from 7:00 PM',
+        'Vieta / Location: Vilnius',
+        '',
+        'Prašome jau dabar rezervuoti šią datą savo kalendoriuose.',
+        'Please reserve this date in your calendar already now.',
+        '',
+        'Išsami informacija ir registracija bus pateikta vėliau.',
+        'Detailed information and registration will follow at a later stage.',
+        '',
+        '━━━━━━━━━━━━━━━━━━━━',
+        '',
+        'Darius Zubas',
+        'Akola group valdybos pirmininkas · Chairman of the Board, Akola Group',
+        '',
+        'https://gediminask91.github.io/akola-event/'
+      ].join('\n');
+
+      var url = 'https://outlook.office.com/calendar/0/action/compose'
+        + '?rru=addevent'
+        + '&subject=' + encodeURIComponent('Akola Group 35 · Kvietimas / Invitation')
+        + '&startdt=2026-10-15T16:00:00Z'
+        + '&enddt=2026-10-15T20:45:00Z'
+        + '&location=' + encodeURIComponent('Vilnius')
+        + '&body=' + encodeURIComponent(body);
+
+      document.getElementById('calBtn').href = url;
+    })();
+    </script>
 
     <!-- FOOTER -->
     <div class="footer">
