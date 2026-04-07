@@ -374,27 +374,23 @@
     </div>
     <script>
     (function() {
-      var b = '<b>Gerbiamieji,</b> &nbsp;|&nbsp; <b>Dear colleagues,</b><br><br>'
-        + 'maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2014 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.'
-        + ' &nbsp;|&nbsp; '
-        + 'We are pleased to invite you to a special occasion \u2014 <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.<br><br>'
-        + '35 metai \u2014 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.'
-        + ' &nbsp;|&nbsp; '
-        + '35 years is a story of decisions, people, and a shared journey we have taken together.<br><br>'
-        + 'J\u016Bs\u0173 buvimas \u2014 svarbi \u0161ios istorijos dalis.'
-        + ' &nbsp;|&nbsp; '
-        + 'Your presence is an important part of this story.<br><br>'
-        + '<hr>'
-        + '\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d. &nbsp;|&nbsp; <b>Date:</b> 15 October 2026<br>'
-        + '\ud83d\udd56 <b>Laikas:</b> nuo 19 val. &nbsp;|&nbsp; <b>Time:</b> from 7:00 PM<br>'
-        + '\ud83d\udccd <b>Vieta:</b> Vilnius &nbsp;|&nbsp; <b>Location:</b> Vilnius<br><br>'
-        + '<hr>'
-        + 'Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.'
-        + ' &nbsp;|&nbsp; '
-        + 'Please reserve this date in your calendar already now.<br>'
-        + 'I\u0161sami informacija ir registracija bus pateikta v\u0117liau.'
-        + ' &nbsp;|&nbsp; '
-        + 'Detailed information and registration will follow at a later stage.';
+      var L='valign="top" style="padding:4px 8px;border-right:1px solid #ccc;"';
+      var R='valign="top" style="padding:4px 8px;"';
+      var b = '<table border="0" cellpadding="0" cellspacing="0" width="100%">'
+        + '<tr><td '+L+'><b>Gerbiamieji,</b></td><td '+R+'><b>Dear colleagues,</b></td></tr>'
+        + '<tr><td '+L+'>maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2014 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
+        + '<td '+R+'>We are pleased to invite you to a special occasion \u2014 <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
+        + '<tr><td '+L+'>35 metai \u2014 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</td>'
+        + '<td '+R+'>35 years is a story of decisions, people, and a shared journey we have taken together.</td></tr>'
+        + '<tr><td '+L+'>J\u016Bs\u0173 buvimas \u2014 svarbi \u0161ios istorijos dalis.</td>'
+        + '<td '+R+'>Your presence is an important part of this story.</td></tr>'
+        + '<tr><td colspan="2"><hr></td></tr>'
+        + '<tr><td '+L+'>\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
+        + '<td '+R+'>\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
+        + '<tr><td colspan="2"><hr></td></tr>'
+        + '<tr><td '+L+'>Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.<br><br>I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</td>'
+        + '<td '+R+'>Please reserve this date in your calendar already now.<br><br>Detailed information and registration will follow at a later stage.</td></tr>'
+        + '</table>';
 
       document.getElementById('calBtn').href =
         'https://outlook.office.com/calendar/deeplink/compose'
