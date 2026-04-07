@@ -413,9 +413,27 @@
         + '\ud83d\udd17 https://gediminask91.github.io/akola-event/\n\n'
         + '\u00a9 2026 Akola Group';
 
-      // Outlook: webcal opens .ics directly in new Outlook (full HTML description)
+      // Outlook 365: opens directly in browser, no desktop app needed
+      var outlookBody = 'Gerbiamieji,\n\n'
+        + 'Maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2014 Akola group 35-ojo jubiliejaus min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.\n'
+        + '35 metai \u2014 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.\n'
+        + 'J\u016Bs\u0173 buvimas \u2014 svarbi \u0161ios istorijos dalis.\n\n'
+        + 'Dear colleagues,\n\n'
+        + 'We are pleased to invite you to Akola Group\u2019s 35th anniversary celebration with your spouse or partner.\n'
+        + 'Your presence is an important part of this story.\n\n'
+        + '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n'
+        + 'Data/Date: 2026-10-15 | 19:00\u201323:45 | Vilnius\n'
+        + 'Darius Zubas \u2014 Chairman of the Board, Akola Group\n'
+        + 'https://gediminask91.github.io/akola-event/';
+
       document.getElementById('btnOutlook').href =
-        'webcal://gediminask91.github.io/akola-event/akola-35-anniversary.ics';
+        'https://outlook.office.com/calendar/0/action/compose'
+        + '?rru=addevent'
+        + '&subject=' + encodeURIComponent(title)
+        + '&startdt=2026-10-15T16:00:00Z'
+        + '&enddt=2026-10-15T20:45:00Z'
+        + '&location=' + encodeURIComponent(loc)
+        + '&body=' + encodeURIComponent(outlookBody);
 
       // Google Calendar
       document.getElementById('btnGoogle').href =
