@@ -1,249 +1,173 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Akola Group 35 · Kvietimas / Invitation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  body{margin:0;padding:0;background:#EDF3F8;font-family:'Roboto',Arial,sans-serif;color:#2A3A55}
-  .outer{width:100%;padding:40px 0}
-  .card{max-width:620px;margin:0 auto;background:#fff;border:1px solid #C8D8E8}
-  .topbar{background:#19C8E1;height:5px;font-size:0;line-height:0}
-  .header{background:#193264;padding:50px 40px 42px;text-align:center}
-  .header .tag{margin:0 0 12px;font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#19C8E1}
-  .header h1{margin:0;font-size:48px;color:#fff;font-weight:700;letter-spacing:1px;font-family:'Poppins',Georgia,serif;line-height:1.15}
-  .header h2{margin:10px 0 0;font-size:20px;color:#A8C8E0;font-weight:300;letter-spacing:5px;font-family:'Poppins',Georgia,serif}
-  .header .rule{width:70px;height:3px;background:#19C8E1;margin:26px auto 0}
-  .dateband{background:#19C8E1;padding:14px 40px;text-align:center}
-  .dateband p{margin:0;font-size:12px;letter-spacing:4px;color:#193264;text-transform:uppercase;font-weight:700}
-  .content{padding:40px 40px 20px}
-  .cols{width:100%;border-collapse:collapse}
-  .cols td.l{width:48%;padding:0 20px 14px 0;border-right:1px solid #C8D8E8;vertical-align:top}
-  .cols td.r{width:48%;padding:0 0 14px 20px;vertical-align:top}
-  .cols td.sp{width:4%}
-  .cols p{margin:0;font-size:14px;color:#2A3A55;line-height:1.85}
-  .cols .greeting p{font-size:15px;color:#193264;font-weight:500}
-  .cols strong{color:#193264}
-  .info{background:#EDF3F8;border-left:3px solid #19C8E1;width:100%;border-collapse:collapse;margin-bottom:10px}
-  .info td{padding:4px 14px;font-size:13px;color:#193264}
-  .info tr:first-child td{padding-top:10px}
-  .info tr:last-child td{padding-bottom:10px}
-  .muted p{font-size:13px;color:#556677;line-height:1.75}
-  .sig{padding:20px 40px 30px}
-  .sig-row{width:100%;border-top:1px solid #C8D8E8;padding-top:24px;display:table;table-layout:fixed}
-  .sig-row .s{display:table-cell;width:50%;vertical-align:top}
-  .sig-row .name{margin:0 0 4px;font-size:17px;font-weight:700;color:#193264;font-family:'Poppins',Georgia,serif}
-  .sig-row .role{margin:0;font-size:12px;color:#19C8E1;letter-spacing:1px;text-transform:uppercase}
-  .cta{padding:28px 40px 36px;text-align:center;border-top:1px solid #C8D8E8}
-  .cta .lbl{margin:0 0 16px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#193264;font-weight:600}
-  .cta button.primary{display:inline-block;background:#19C8E1;color:#193264;padding:14px 36px;font-size:14px;font-weight:700;letter-spacing:1px;border:0;border-radius:4px;font-family:'Roboto',Arial,sans-serif;cursor:pointer;transition:background .15s}
-  .cta button.primary:hover{background:#4bd6ea}
-  .cta button.primary:disabled{background:#A8C8E0;cursor:wait;color:#193264}
-  .status{margin-top:14px;font-size:12px;color:#556677;min-height:16px}
-  .status.ok{color:#0a7a3a;font-weight:500}
-  .retry{display:inline-block;margin-top:10px;font-size:12px;color:#193264;text-decoration:underline;cursor:pointer;background:none;border:0;font-family:inherit;padding:0}
-  .retry:hover{color:#19C8E1}
-  .footer{background:#193264;padding:18px 40px;text-align:center}
-  .footer p{margin:0;font-size:11px;letter-spacing:2px;color:#19C8E1;text-transform:uppercase}
-  @media (max-width:560px){
-    .outer{padding:0}
-    .card{border:0}
-    .header{padding:36px 20px 30px}
-    .header h1{font-size:36px}
-    .header h2{font-size:16px;letter-spacing:3px}
-    .dateband{padding:12px 20px}
-    .dateband p{font-size:11px;letter-spacing:2px}
-    .content{padding:28px 20px 10px}
-    .cols td.l,.cols td.r{display:block;width:auto;padding:6px 0 14px;border-right:0;border-bottom:1px solid #EDF3F8}
-    .cols tr:last-child td:last-child{border-bottom:0}
-    .cols td.sp{display:none}
-    .sig{padding:16px 20px 22px}
-    .sig-row{display:block}
-    .sig-row .s{display:block;width:auto;margin-bottom:14px}
-    .cta{padding:22px 20px 28px}
-    .cta button.primary{padding:14px 22px;font-size:13px;width:100%;box-sizing:border-box}
-    .footer{padding:16px 20px}
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Akola Group 35 · Kvietimas / Invitation</title>
+  <style>
+    body{margin:0;padding:20px 10px;background:#EDF3F8;font-family:Arial,sans-serif;}
+    .wrap{max-width:600px;margin:0 auto;}
+    .invite{background:#fff;border:1px solid #C8D8E8;}
+    .btn{display:block;background:#19C8E1;color:#193264;text-align:center;padding:16px 24px;font-size:15px;font-weight:bold;text-decoration:none;letter-spacing:1px;margin:16px 0;border:none;cursor:pointer;border-radius:4px;}
+    .btn:hover{background:#15b5cc;}
+    .state{text-align:center;font-size:12px;color:#556677;margin:10px 0 20px;line-height:1.6;}
+    .ok{color:#193264;font-weight:bold;}
+    table{border-collapse:collapse;}
+  </style>
 </head>
 <body>
-  <div class="outer">
-    <div class="card">
-      <div class="topbar">&nbsp;</div>
+<div class="wrap">
 
-      <div class="header">
-        <p class="tag">Akola Group &middot; 35</p>
-        <h1>KVIETIMAS</h1>
-        <h2>INVITATION</h2>
-        <div class="rule"></div>
-      </div>
+  <button class="btn" id="btn">📅 ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ</button>
+  <div class="state" id="state">
+    Pirmas paspaudimas — prisijunkite. Antras — pridės į kalendorių.<br>
+    First click — sign in. Second click — adds to your calendar.
+  </div>
 
-      <div class="dateband">
-        <p>2026 m. spalio 15 d. &nbsp;&middot;&nbsp; 15 October 2026 &nbsp;&middot;&nbsp; Vilnius</p>
-      </div>
-
-      <div class="content">
-        <table class="cols">
-          <tr class="greeting">
-            <td class="l"><p>Gerbiamieji,</p></td>
-            <td class="sp"></td>
-            <td class="r"><p>Dear colleagues,</p></td>
+  <div class="invite">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr><td style="background:#19C8E1;height:5px;font-size:0;">&nbsp;</td></tr>
+      <tr><td align="center" style="background:#193264;padding:40px 24px 34px;">
+        <div style="font-size:12px;letter-spacing:5px;color:#19C8E1;">AKOLA GROUP · 35</div>
+        <div style="font-size:38px;color:#fff;font-weight:bold;margin:10px 0 6px;letter-spacing:1px;">KVIETIMAS</div>
+        <div style="font-size:16px;color:#A8C8E0;letter-spacing:5px;">INVITATION</div>
+        <div style="width:60px;height:3px;background:#19C8E1;margin:18px auto 0;"></div>
+      </td></tr>
+      <tr><td align="center" style="background:#19C8E1;padding:10px 20px;">
+        <b style="font-size:11px;letter-spacing:3px;color:#193264;">2026 M. SPALIO 15 D. · 15 OCTOBER 2026 · VILNIUS</b>
+      </td></tr>
+      <tr><td style="padding:24px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:13px;color:#2A3A55;line-height:1.8;">
+          <tr>
+            <td valign="top" width="48%" style="padding:8px 14px 8px 0;border-right:1px solid #C8D8E8;"><b style="color:#193264;">Gerbiamieji,</b></td>
+            <td valign="top" width="48%" style="padding:8px 0 8px 14px;"><b style="color:#193264;">Dear colleagues,</b></td>
           </tr>
           <tr>
-            <td class="l"><p>maloniai kviečiame į ypatingą progą &mdash; <strong>Akola group 35-ojo jubiliejaus</strong> minėjimą, kuriame lauksime Jūsų kartu su Jūsų antrąja puse.</p></td>
-            <td class="sp"></td>
-            <td class="r"><p>we are pleased to invite you to a special occasion &mdash; the celebration of <strong>Akola Group&rsquo;s 35th anniversary</strong>, where we will be delighted to welcome you together with your spouse or partner.</p></td>
+            <td valign="top" style="padding:8px 14px 8px 0;border-right:1px solid #C8D8E8;">Maloniai kviečiame į ypatingą progą – <b style="color:#193264;">Akola group 35-ojo jubiliejaus</b> minėjimą, kuriame lauksime Jūsų kartu su Jūsų antrąja puse.</td>
+            <td valign="top" style="padding:8px 0 8px 14px;">We are pleased to invite you to a special occasion – the celebration of <b style="color:#193264;">Akola Group's 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td>
           </tr>
           <tr>
-            <td class="l"><p>35 metai &mdash; tai sprendimai, žmonės ir bendras kelias, kuriuo ėjome kartu.</p></td>
-            <td class="sp"></td>
-            <td class="r"><p>35 years is a story of decisions, people, and a shared journey we have taken together.</p></td>
+            <td valign="top" style="padding:8px 14px 8px 0;border-right:1px solid #C8D8E8;">35 metai – tai sprendimai, žmonės ir bendras kelias, kuriuo ėjome kartu.</td>
+            <td valign="top" style="padding:8px 0 8px 14px;">35 years is a story of decisions, people, and a shared journey we have taken together.</td>
           </tr>
           <tr>
-            <td class="l"><p>Jūsų buvimas &mdash; svarbi šios istorijos dalis.</p></td>
-            <td class="sp"></td>
-            <td class="r"><p>Your presence is an important part of this story.</p></td>
+            <td valign="top" style="padding:8px 14px 8px 0;border-right:1px solid #C8D8E8;">Jūsų buvimas – svarbi šios istorijos dalis.</td>
+            <td valign="top" style="padding:8px 0 8px 14px;">Your presence is an important part of this story.</td>
           </tr>
           <tr>
-            <td class="l">
-              <table class="info">
-                <tr><td>&#128197; <strong>Data:</strong> 2026 m. spalio 15 d.</td></tr>
-                <tr><td>&#128342; <strong>Laikas:</strong> nuo 19 val.</td></tr>
-                <tr><td>&#128205; <strong>Vieta:</strong> Vilnius</td></tr>
-              </table>
-            </td>
-            <td class="sp"></td>
-            <td class="r">
-              <table class="info">
-                <tr><td>&#128197; <strong>Date:</strong> 15 October 2026</td></tr>
-                <tr><td>&#128342; <strong>Time:</strong> from 7:00 PM</td></tr>
-                <tr><td>&#128205; <strong>Location:</strong> Vilnius</td></tr>
-              </table>
-            </td>
+            <td valign="top" style="padding:12px 14px;border-right:1px solid #C8D8E8;background:#EDF3F8;color:#193264;">📅 <b>Data:</b> 2026 m. spalio 15 d.<br>🕖 <b>Laikas:</b> nuo 19 val.<br>📍 <b>Vieta:</b> Vilnius</td>
+            <td valign="top" style="padding:12px 14px;background:#EDF3F8;color:#193264;">📅 <b>Date:</b> 15 October 2026<br>🕖 <b>Time:</b> from 7:00 PM<br>📍 <b>Location:</b> Vilnius</td>
           </tr>
-          <tr class="muted">
-            <td class="l"><p>Prašome jau dabar rezervuoti šią datą savo kalendoriuose.</p></td>
-            <td class="sp"></td>
-            <td class="r"><p>Please reserve this date in your calendar already now.</p></td>
+          <tr>
+            <td valign="top" style="padding:8px 14px 8px 0;border-right:1px solid #C8D8E8;color:#556677;">Prašome jau dabar rezervuoti šią datą savo kalendoriuose.</td>
+            <td valign="top" style="padding:8px 0 8px 14px;color:#556677;">Please reserve this date in your calendar already now.</td>
           </tr>
-          <tr class="muted">
-            <td class="l"><p>Išsami informacija ir registracija bus pateikta vėliau.</p></td>
-            <td class="sp"></td>
-            <td class="r"><p>Detailed information and registration will follow at a later stage.</p></td>
+          <tr>
+            <td valign="top" style="padding:8px 14px 8px 0;border-right:1px solid #C8D8E8;color:#556677;">Išsami informacija ir registracija bus pateikta vėliau.</td>
+            <td valign="top" style="padding:8px 0 8px 14px;color:#556677;">Detailed information and registration will follow at a later stage.</td>
+          </tr>
+          <tr>
+            <td valign="top" style="padding:16px 14px 8px 0;border-right:1px solid #C8D8E8;border-top:1px solid #C8D8E8;"><b style="color:#193264;">Darius Zubas</b><br><span style="color:#19C8E1;font-size:10px;letter-spacing:1px;">AKOLA GROUP VALDYBOS PIRMININKAS</span></td>
+            <td valign="top" style="padding:16px 0 8px 14px;border-top:1px solid #C8D8E8;"><b style="color:#193264;">Darius Zubas</b><br><span style="color:#19C8E1;font-size:10px;letter-spacing:1px;">CHAIRMAN OF THE BOARD, AKOLA GROUP</span></td>
           </tr>
         </table>
-      </div>
-
-      <div class="sig">
-        <div class="sig-row">
-          <div class="s">
-            <p class="name">Darius Zubas</p>
-            <p class="role">Akola group valdybos pirmininkas</p>
-          </div>
-          <div class="s">
-            <p class="name">Darius Zubas</p>
-            <p class="role">Chairman of the Board, Akola Group</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cta">
-        <p class="lbl">Save the Date &nbsp;&middot;&nbsp; Išsisaugokite šį renginį savo kalendoriuje</p>
-        <button class="primary" id="go">&#128197;&ensp;Add to Calendar &nbsp;/&nbsp; Įtraukti į kalendorių</button>
-        <div class="status" id="status">&nbsp;</div>
-        <button class="retry" id="skip">Jau prisijungęs prie Outlook? Spausk čia. / Already signed in to Outlook? Click here.</button>
-      </div>
-
-      <div class="footer">
-        <p>&copy; 2026 Akola Group &nbsp;&middot;&nbsp; All rights reserved</p>
-      </div>
-    </div>
+      </td></tr>
+      <tr><td align="center" style="background:#193264;padding:12px;">
+        <span style="font-size:10px;letter-spacing:2px;color:#19C8E1;">© 2026 AKOLA GROUP · ALL RIGHTS RESERVED</span>
+      </td></tr>
+    </table>
   </div>
+
+  <button class="btn" id="btn2">📅 ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ</button>
+
+</div>
 
 <script>
 (function(){
-  // ---- Full bilingual HTML body used in the Outlook deeplink body= param ----
-  // Kept in JS so the \uXXXX escapes are decoded at runtime (unlike in HTML text).
-  var d='border-right:1px solid #ccc;', p='valign=top style=padding:8px;';
-  var L = p + d, R = p;
-  var body = '<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
-    + '<tr><td colspan=2 style=background:#193264;padding:20px;text-align:center>'
-    +   '<font color=#19C8E1 size=2>AKOLA GROUP \u00b7 35</font><br>'
-    +   '<font color=white size=6><b>KVIETIMAS</b></font><br>'
-    +   '<font color=#A8C8E0 size=2>INVITATION</font>'
-    + '</td></tr>'
-    + '<tr><td colspan=2 style=background:#19C8E1;padding:6px;text-align:center>'
-    +   '<font size=1 color=#193264><b>2026 M. SPALIO 15 D. \u00b7 15 OCTOBER 2026 \u00b7 VILNIUS</b></font>'
-    + '</td></tr>'
-    + '<tr><td '+L+'><b>Gerbiamieji,</b></td><td '+R+'><b>Dear colleagues,</b></td></tr>'
-    + '<tr><td '+L+'>Maloniai kvie\u010diame \u012f ypating\u0105 prog\u0105 \u2013 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
-    +   '<td '+R+'>We are pleased to invite you to a special occasion \u2013 the celebration of <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
-    + '<tr><td '+L+'>35 metai \u2013 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</td>'
-    +   '<td '+R+'>35 years is a story of decisions, people, and a shared journey we have taken together.</td></tr>'
-    + '<tr><td '+L+'>J\u016Bs\u0173 buvimas \u2013 svarbi \u0161ios istorijos dalis.</td>'
-    +   '<td '+R+'>Your presence is an important part of this story.</td></tr>'
-    + '<tr><td '+L+'>\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
-    +   '<td '+R+'>\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
-    + '<tr><td '+L+'><font color=#667>Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</font></td>'
-    +   '<td '+R+'><font color=#667>Please reserve this date in your calendar already now.</font></td></tr>'
-    + '<tr><td '+L+'><font color=#667>I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</font></td>'
-    +   '<td '+R+'><font color=#667>Detailed information and registration will follow at a later stage.</font></td></tr>'
-    + '<tr><td '+L+' style=padding:8px;'+d+'border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Akola group valdybos pirmininkas</font></td>'
-    +   '<td '+R+' style=padding:8px;border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Chairman of the Board, Akola Group</font></td></tr>'
-    + '<tr><td colspan=2 style=background:#193264;padding:8px;text-align:center>'
-    +   '<font color=#19C8E1 size=1>\u00a9 2026 AKOLA GROUP</font>'
-    + '</td></tr></table>';
+  // Flag stored in sessionStorage so second click goes straight to compose
+  var signedIn = sessionStorage.getItem('akolaSignedIn') === '1';
 
-  var deeplink = 'https://outlook.office.com/calendar/deeplink/compose'
-    + '?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
-    + '&subject=' + encodeURIComponent('Akola Group 35 \u00b7 Kvietimas / Invitation')
-    + '&startdt=2026-10-15T16:00:00Z&enddt=2026-10-15T20:45:00Z'
-    + '&location=' + encodeURIComponent('Vilnius')
-    + '&body=' + encodeURIComponent(body);
+  var L='valign="top" style="padding:10px 14px;border-right:1px solid #ccc;"';
+  var R='valign="top" style="padding:10px 14px;"';
+  var body='<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
+    +'<tr><td colspan=2 style=background:#193264;padding:20px;text-align:center>'
+    +'<font color=#19C8E1 size=2>AKOLA GROUP \u00b7 35</font><br>'
+    +'<font color=white size=6><b>KVIETIMAS</b></font><br>'
+    +'<font color=#A8C8E0 size=2>INVITATION</font>'
+    +'</td></tr>'
+    +'<tr><td colspan=2 style=background:#19C8E1;padding:6px;text-align:center>'
+    +'<font size=1 color=#193264><b>2026 M. SPALIO 15 D. \u00b7 15 OCTOBER 2026 \u00b7 VILNIUS</b></font>'
+    +'</td></tr>'
+    +'<tr><td '+L+'><b>Gerbiamieji,</b></td><td '+R+'><b>Dear colleagues,</b></td></tr>'
+    +'<tr><td '+L+'>Maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2013 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
+    +'<td '+R+'>We are pleased to invite you to a special occasion \u2013 the celebration of <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
+    +'<tr><td '+L+'>35 metai \u2013 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</td>'
+    +'<td '+R+'>35 years is a story of decisions, people, and a shared journey we have taken together.</td></tr>'
+    +'<tr><td '+L+'>J\u016Bs\u0173 buvimas \u2013 svarbi \u0161ios istorijos dalis.</td>'
+    +'<td '+R+'>Your presence is an important part of this story.</td></tr>'
+    +'<tr><td '+L+'>\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
+    +'<td '+R+'>\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
+    +'<tr><td '+L+'><font color=#667>Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</font></td>'
+    +'<td '+R+'><font color=#667>Please reserve this date in your calendar already now.</font></td></tr>'
+    +'<tr><td '+L+'><font color=#667>I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</font></td>'
+    +'<td '+R+'><font color=#667>Detailed information and registration will follow at a later stage.</font></td></tr>'
+    +'<tr><td '+L+' style=padding:10px;border-right:1px solid #ccc;border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Akola group valdybos pirmininkas</font></td>'
+    +'<td '+R+' style=padding:10px;border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Chairman of the Board, Akola Group</font></td></tr>'
+    +'<tr><td colspan=2 style=background:#193264;padding:8px;text-align:center>'
+    +'<font color=#19C8E1 size=1>\u00a9 2026 AKOLA GROUP</font>'
+    +'</td></tr></table>';
 
-  var btn    = document.getElementById('go');
-  var status = document.getElementById('status');
-  var skip   = document.getElementById('skip');
-  var signinTab = null;
-  var stage = 'initial'; // 'initial' \u2192 'awaiting' \u2192 'done'
+  var signInUrl = 'https://outlook.office.com/mail/';
+  var composeUrl = 'https://outlook.office.com/calendar/deeplink/compose'
+    +'?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
+    +'&subject='+encodeURIComponent('Akola Group 35 \u00b7 Kvietimas / Invitation')
+    +'&startdt=2026-10-15T16:00:00Z&enddt=2026-10-15T20:45:00Z'
+    +'&location=Vilnius&body='+encodeURIComponent(body);
 
-  function openDeeplink(){
-    if (stage === 'done') return;
-    stage = 'done';
-    status.className = 'status ok';
-    status.textContent = '\u2713 Atveriamas kalendorius\u2026 / Opening calendar\u2026';
-    // Close the sign-in tab if we opened it and it's still around.
-    if (signinTab && !signinTab.closed) { try { signinTab.close(); } catch(e){} }
-    // Navigate THIS tab \u2014 always allowed, no popup-blocker, long URLs fine.
-    window.location.href = deeplink;
+  var stateEl = document.getElementById('state');
+
+  function setState(html){ stateEl.innerHTML = html; }
+
+  function updateButtonLabel(){
+    if (signedIn){
+      setState('<span class="ok">✓ Prisijungta / Signed in.</span> Spustelėkite dar kartą, kad pridėtumėte renginį. / Click again to add the event.');
+    } else {
+      setState('Pirmas paspaudimas — prisijunkite. Antras — pridės į kalendorių.<br>First click — sign in. Second click — adds to your calendar.');
+    }
+  }
+  updateButtonLabel();
+
+  function openWindow(url){
+    var w = 900, h = 700;
+    var left = Math.max(0, (screen.width - w) / 2);
+    var top  = Math.max(0, (screen.height - h) / 2);
+    return window.open(url, 'akolaOutlook', 'width='+w+',height='+h+',left='+left+',top='+top);
   }
 
-  btn.onclick = function(){
-    if (stage === 'initial') {
-      // Step 1: open Outlook sign-in in a new tab. Short URL \u2192 no AADSTS90015.
-      signinTab = window.open('https://outlook.office.com/mail/', '_blank');
-      if (!signinTab) {
-        status.textContent = 'Naujas langas u\u017Eblokuotas. Leiskite i\u0161skleid\u017Eiamuosius langus ir bandykite dar kart\u0105. / New window was blocked \u2014 please allow popups and retry.';
-        return;
-      }
-      stage = 'awaiting';
-      btn.textContent = '\u2192\u2002Prid\u0117ti rengin\u012F / Add the event';
-      status.innerHTML = 'Naujame lange prisijunkite prie Outlook, tada gr\u012F\u017Ekite \u010dia ir paspauskite mygtuk\u0105 dar kart\u0105.<br>Sign in to Outlook in the new window, then return here and click the button again.';
-      skip.style.display = 'none';
-    } else if (stage === 'awaiting') {
-      // Step 2: user came back. Focus was here already \u2192 this is a user gesture.
-      openDeeplink();
+  function handleClick(){
+    if (!signedIn){
+      // Step 1: open sign-in window
+      var win = openWindow(signInUrl);
+      setState('Prisijunkite Outlook lange, tada uždarykite jį ir spustelėkite mygtuką dar kartą.<br>Sign in in the Outlook window, close it, then click the button again.');
+      // Mark as signed-in once they close the window
+      var t = setInterval(function(){
+        if (!win || win.closed){
+          clearInterval(t);
+          sessionStorage.setItem('akolaSignedIn','1');
+          signedIn = true;
+          updateButtonLabel();
+        }
+      }, 500);
+    } else {
+      // Step 2: open compose
+      openWindow(composeUrl);
+      setState('Kalendoriaus lange spustelėkite <b>Save</b>, kad pridėtumėte renginį.<br>Click <b>Save</b> in the calendar window to add the event.');
     }
-  };
+  }
 
-  // Shortcut for users who are already signed in to Outlook.
-  skip.onclick = function(){
-    openDeeplink();
-  };
+  document.getElementById('btn').onclick = handleClick;
+  document.getElementById('btn2').onclick = handleClick;
 })();
 </script>
+
 </body>
 </html>
