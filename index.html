@@ -7,10 +7,11 @@
     body{margin:0;padding:20px 10px;background:#EDF3F8;font-family:Arial,sans-serif;}
     .wrap{max-width:600px;margin:0 auto;}
     .invite{background:#fff;border:1px solid #C8D8E8;}
-    .btn{display:block;background:#19C8E1;color:#193264;text-align:center;padding:16px 24px;font-size:15px;font-weight:bold;text-decoration:none;letter-spacing:1px;margin:16px 0;border:none;cursor:pointer;border-radius:4px;}
+    .btn{display:block;background:#19C8E1;color:#193264;text-align:center;padding:16px 24px;font-size:15px;font-weight:bold;text-decoration:none;letter-spacing:1px;margin:16px 0;border:none;cursor:pointer;border-radius:4px;width:100%;}
     .btn:hover{background:#15b5cc;}
-    .note{text-align:center;font-size:12px;color:#556677;margin:0 0 16px;line-height:1.6;padding:12px;background:#fff;border:1px dashed #19C8E1;}
-    .note b{color:#193264;}
+    .btn:disabled{opacity:0.6;cursor:default;}
+    .btn.done{background:#193264;color:#19C8E1;}
+    .state{text-align:center;font-size:12px;color:#556677;margin:0 0 10px;line-height:1.6;min-height:32px;}
     table{border-collapse:collapse;}
   </style>
 </head>
@@ -71,19 +72,20 @@
     </table>
   </div>
 
-  <div class="note">
-    <b>Jei paprašys prisijungti Outlook lange — prisijunkite, grįžkite čia ir paspauskite mygtuką dar kartą.</b><br>
-    If Outlook asks you to sign in — sign in, then come back here and click the button again.
-  </div>
-  <a class="btn" id="btn" href="#">📅 ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ</a>
+  <div class="state" id="state"></div>
+  <button class="btn" id="btn"></button>
 
 </div>
 
 <script>
 (function(){
+  var STATE = sessionStorage.getItem('akolaState') || 'signin';
+  var btn = document.getElementById('btn');
+  var stateEl = document.getElementById('state');
+
   var L='valign="top" style="padding:10px 14px;border-right:1px solid #ccc;"';
   var R='valign="top" style="padding:10px 14px;"';
-  var b='<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
+  var body='<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
     +'<tr><td colspan=2 style=background:#193264;padding:20px;text-align:center>'
     +'<font color=#19C8E1 size=2>AKOLA GROUP \u00b7 35</font><br>'
     +'<font color=white size=6><b>KVIETIMAS</b></font><br>'
@@ -111,12 +113,61 @@
     +'<font color=#19C8E1 size=1>\u00a9 2026 AKOLA GROUP</font>'
     +'</td></tr></table>';
 
-  document.getElementById('btn').href =
-    'https://outlook.office.com/calendar/deeplink/compose'
+  var composeUrl = 'https://outlook.office.com/calendar/deeplink/compose'
     +'?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
     +'&subject='+encodeURIComponent('Akola Group 35 \u00b7 Kvietimas / Invitation')
     +'&startdt=2026-10-15T16:00:00Z&enddt=2026-10-15T20:45:00Z'
-    +'&location=Vilnius&body='+encodeURIComponent(b);
+    +'&location=Vilnius&body='+encodeURIComponent(body);
+
+  function render(){
+    btn.className = 'btn';
+    stateEl.innerHTML = '';
+    if (STATE === 'signin'){
+      btn.textContent = '🔐  SIGN IN TO OUTLOOK / PRISIJUNKITE';
+    } else if (STATE === 'ready'){
+      btn.textContent = '📅  ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ';
+    } else {
+      btn.textContent = '✓  ADDED / PRIDĖTA';
+      btn.className = 'btn done';
+    }
+  }
+
+  function openPopup(url){
+    var w=900,h=700;
+    var left=Math.max(0,(screen.width-w)/2);
+    var top=Math.max(0,(screen.height-h)/2);
+    return window.open(url, 'akolaPopup', 'width='+w+',height='+h+',left='+left+',top='+top);
+  }
+
+  function watchClose(win, onClosed){
+    var t = setInterval(function(){
+      if (!win || win.closed){ clearInterval(t); onClosed(); }
+    }, 500);
+  }
+
+  btn.onclick = function(){
+    if (STATE === 'signin'){
+      var win = openPopup('https://outlook.office.com/mail/');
+      watchClose(win, function(){
+        STATE = 'ready';
+        sessionStorage.setItem('akolaState', STATE);
+        render();
+      });
+    } else if (STATE === 'ready'){
+      var win = openPopup(composeUrl);
+      watchClose(win, function(){
+        STATE = 'added';
+        sessionStorage.setItem('akolaState', STATE);
+        render();
+      });
+    } else {
+      STATE = 'ready';
+      sessionStorage.setItem('akolaState', STATE);
+      render();
+    }
+  };
+
+  render();
 })();
 </script>
 
