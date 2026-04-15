@@ -44,7 +44,7 @@
   .cta button.primary:disabled{background:#A8C8E0;cursor:wait;color:#193264}
   .status{margin-top:14px;font-size:12px;color:#556677;min-height:16px}
   .status.ok{color:#0a7a3a;font-weight:500}
-  .retry{display:none;margin-top:8px;font-size:12px;color:#193264;text-decoration:underline;cursor:pointer;background:none;border:0;font-family:inherit}
+  .retry{display:inline-block;margin-top:10px;font-size:12px;color:#193264;text-decoration:underline;cursor:pointer;background:none;border:0;font-family:inherit;padding:0}
   .retry:hover{color:#19C8E1}
   .footer{background:#193264;padding:18px 40px;text-align:center}
   .footer p{margin:0;font-size:11px;letter-spacing:2px;color:#19C8E1;text-transform:uppercase}
@@ -154,7 +154,7 @@
         <p class="lbl">Save the Date &nbsp;&middot;&nbsp; Išsisaugokite šį renginį savo kalendoriuje</p>
         <button class="primary" id="go">&#128197;&ensp;Add to Calendar &nbsp;/&nbsp; Įtraukti į kalendorių</button>
         <div class="status" id="status">&nbsp;</div>
-        <button class="retry" id="retry">Jau prisijungęs? Pridėti dabar. / Already signed in? Add now.</button>
+        <button class="retry" id="skip">Jau prisijungęs prie Outlook? Spausk čia. / Already signed in to Outlook? Click here.</button>
       </div>
 
       <div class="footer">
@@ -206,45 +206,41 @@
 
   var btn    = document.getElementById('go');
   var status = document.getElementById('status');
-  var retry  = document.getElementById('retry');
-  var popup = null, timer = null, fired = false;
+  var skip   = document.getElementById('skip');
+  var signinTab = null;
+  var stage = 'initial'; // 'initial' \u2192 'awaiting' \u2192 'done'
 
   function openDeeplink(){
-    if (fired) return;
-    fired = true;
+    if (stage === 'done') return;
+    stage = 'done';
     status.className = 'status ok';
     status.textContent = '\u2713 Atveriamas kalendorius\u2026 / Opening calendar\u2026';
-    // Close the sign-in popup if still open.
-    if (popup && !popup.closed) { try { popup.close(); } catch(e){} }
-    // Use location.href (not window.open) so the async callback isn't blocked
-    // by popup blockers. Navigating the current tab is always allowed.
+    // Close the sign-in tab if we opened it and it's still around.
+    if (signinTab && !signinTab.closed) { try { signinTab.close(); } catch(e){} }
+    // Navigate THIS tab \u2014 always allowed, no popup-blocker, long URLs fine.
     window.location.href = deeplink;
   }
 
   btn.onclick = function(){
-    // Short URL \u2013 Azure AD login wrap stays well under the 2 KB cap \u2192 no AADSTS90015.
-    popup = window.open('https://outlook.office.com/mail/', 'akola-signin',
-      'width=560,height=720,menubar=no,toolbar=no,location=yes');
-    if (!popup) {
-      status.textContent = 'Iššok\u017Ei lango atidaryti negalima. Leiskite išskleidžiamuosius langus ir bandykite dar kartą. / Popup was blocked \u2014 please allow popups and retry.';
-      return;
-    }
-    btn.disabled = true;
-    btn.textContent = 'Laukiama prisijungimo\u2026 / Waiting for sign-in\u2026';
-    status.textContent = 'Prisijunkite lange ir uždarykite jį. / Sign in in the window, then close it.';
-    retry.style.display = 'inline-block';
-
-    timer = setInterval(function(){
-      if (popup.closed){
-        clearInterval(timer);
-        openDeeplink();
+    if (stage === 'initial') {
+      // Step 1: open Outlook sign-in in a new tab. Short URL \u2192 no AADSTS90015.
+      signinTab = window.open('https://outlook.office.com/mail/', '_blank');
+      if (!signinTab) {
+        status.textContent = 'Naujas langas u\u017Eblokuotas. Leiskite i\u0161skleid\u017Eiamuosius langus ir bandykite dar kart\u0105. / New window was blocked \u2014 please allow popups and retry.';
+        return;
       }
-    }, 400);
+      stage = 'awaiting';
+      btn.textContent = '\u2192\u2002Prid\u0117ti rengin\u012F / Add the event';
+      status.innerHTML = 'Naujame lange prisijunkite prie Outlook, tada gr\u012F\u017Ekite \u010dia ir paspauskite mygtuk\u0105 dar kart\u0105.<br>Sign in to Outlook in the new window, then return here and click the button again.';
+      skip.style.display = 'none';
+    } else if (stage === 'awaiting') {
+      // Step 2: user came back. Focus was here already \u2192 this is a user gesture.
+      openDeeplink();
+    }
   };
 
-  retry.onclick = function(){
-    if (timer){ clearInterval(timer); }
-    if (popup && !popup.closed){ try { popup.close(); } catch(e){} }
+  // Shortcut for users who are already signed in to Outlook.
+  skip.onclick = function(){
     openDeeplink();
   };
 })();
