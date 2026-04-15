@@ -1,44 +1,125 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Akola Group 35</title></head>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<title>Akola Group 35 \u00b7 Kvietimas / Invitation</title>
+<style>
+  html,body{margin:0;padding:0;font-family:-apple-system,Segoe UI,Arial,sans-serif;background:#f3f5f8;color:#193264}
+  .wrap{max-width:520px;margin:48px auto;padding:28px;background:#fff;border-radius:10px;box-shadow:0 4px 24px rgba(25,50,100,.08)}
+  .band{background:#193264;color:#fff;margin:-28px -28px 20px;padding:22px 28px;border-radius:10px 10px 0 0;text-align:center}
+  .band .tag{color:#19C8E1;font-size:12px;letter-spacing:2px}
+  .band h1{margin:4px 0 0;font-size:22px;font-weight:600}
+  .band .sub{color:#A8C8E0;font-size:12px;margin-top:2px}
+  p{font-size:14px;line-height:1.5;margin:8px 0;color:#334}
+  button{display:block;width:100%;padding:14px;margin:18px 0 0;font-size:15px;font-weight:600;border:0;border-radius:6px;cursor:pointer;background:#19C8E1;color:#193264;transition:background .15s}
+  button:hover{background:#4bd6ea}
+  button:disabled{background:#bcc4d1;color:#fff;cursor:wait}
+  .status{font-size:12px;color:#667;margin-top:10px;text-align:center;min-height:16px}
+  .retry{display:block;text-align:center;margin-top:12px;font-size:12px;color:#667;text-decoration:underline;cursor:pointer}
+  .retry:hover{color:#193264}
+  .ok{color:#0a7a3a}
+</style>
+</head>
 <body>
+<div class="wrap">
+  <div class="band">
+    <div class="tag">AKOLA GROUP \u00b7 35</div>
+    <h1>KVIETIMAS / INVITATION</h1>
+    <div class="sub">2026 m. spalio 15 d. \u00b7 15 October 2026 \u00b7 Vilnius</div>
+  </div>
+
+  <p><b>LT:</b> Paspauskite mygtuk\u0105, prisijunkite prie <i>Outlook</i> atsidariusiame lange ir j\u012F u\u017Edarykite \u2014 renginys bus prid\u0117tas automati\u0161kai.</p>
+  <p><b>EN:</b> Click the button, sign in to <i>Outlook</i> in the window that opens, then close it \u2014 the event will be added automatically.</p>
+
+  <button id="go">Prid\u0117ti \u012F kalendori\u0173 / Add to calendar</button>
+
+  <div class="status" id="status">&nbsp;</div>
+
+  <a class="retry" id="retry" style="display:none">Jau prisijung\u0119s? Prid\u0117ti dabar. / Already signed in? Add now.</a>
+</div>
+
 <script>
 (function(){
-  var d='border-right:1px solid #ccc;',p='valign=top style=padding:8px;';
-  var L=p+d,R=p;
-  var b='<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
-    +'<tr><td colspan=2 style=background:#193264;padding:20px;text-align:center>'
-    +'<font color=#19C8E1 size=2>AKOLA GROUP \u00b7 35</font><br>'
-    +'<font color=white size=6><b>KVIETIMAS</b></font><br>'
-    +'<font color=#A8C8E0 size=2>INVITATION</font>'
-    +'</td></tr>'
-    +'<tr><td colspan=2 style=background:#19C8E1;padding:6px;text-align:center>'
-    +'<font size=1 color=#193264><b>2026 M. SPALIO 15 D. \u00b7 15 OCTOBER 2026 \u00b7 VILNIUS</b></font>'
-    +'</td></tr>'
-    +'<tr><td '+L+'><b>Gerbiamieji,</b></td><td '+R+'><b>Dear colleagues,</b></td></tr>'
-    +'<tr><td '+L+'>Maloniai kvie\u010Diame \u012F ypating\u0105 prog\u0105 \u2013 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
-    +'<td '+R+'>We are pleased to invite you to a special occasion \u2013 the celebration of <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
-    +'<tr><td '+L+'>35 metai \u2013 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</td>'
-    +'<td '+R+'>35 years is a story of decisions, people, and a shared journey we have taken together.</td></tr>'
-    +'<tr><td '+L+'>J\u016Bs\u0173 buvimas \u2013 svarbi \u0161ios istorijos dalis.</td>'
-    +'<td '+R+'>Your presence is an important part of this story.</td></tr>'
-    +'<tr><td '+L+'>\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
-    +'<td '+R+'>\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
-    +'<tr><td '+L+'><font color=#667>Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</font></td>'
-    +'<td '+R+'><font color=#667>Please reserve this date in your calendar already now.</font></td></tr>'
-    +'<tr><td '+L+'><font color=#667>I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</font></td>'
-    +'<td '+R+'><font color=#667>Detailed information and registration will follow at a later stage.</font></td></tr>'
-    +'<tr><td '+L+' style=padding:8px;'+d+'border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Akola group valdybos pirmininkas</font></td>'
-    +'<td '+R+' style=padding:8px;border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Chairman of the Board, Akola Group</font></td></tr>'
-    +'<tr><td colspan=2 style=background:#193264;padding:8px;text-align:center>'
-    +'<font color=#19C8E1 size=1>\u00a9 2026 AKOLA GROUP</font>'
-    +'</td></tr></table>';
+  // ---- Full bilingual HTML body (fits because we ensure the user is signed in first) ----
+  var d='border-right:1px solid #ccc;', p='valign=top style=padding:8px;';
+  var L = p + d, R = p;
+  var body = '<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
+    + '<tr><td colspan=2 style=background:#193264;padding:20px;text-align:center>'
+    +   '<font color=#19C8E1 size=2>AKOLA GROUP \u00b7 35</font><br>'
+    +   '<font color=white size=6><b>KVIETIMAS</b></font><br>'
+    +   '<font color=#A8C8E0 size=2>INVITATION</font>'
+    + '</td></tr>'
+    + '<tr><td colspan=2 style=background:#19C8E1;padding:6px;text-align:center>'
+    +   '<font size=1 color=#193264><b>2026 M. SPALIO 15 D. \u00b7 15 OCTOBER 2026 \u00b7 VILNIUS</b></font>'
+    + '</td></tr>'
+    + '<tr><td '+L+'><b>Gerbiamieji,</b></td><td '+R+'><b>Dear colleagues,</b></td></tr>'
+    + '<tr><td '+L+'>Maloniai kvie\u010diame \u012f ypating\u0105 prog\u0105 \u2013 <b>Akola group 35-ojo jubiliejaus</b> min\u0117jim\u0105, kuriame lauksime J\u016Bs\u0173 kartu su J\u016Bs\u0173 antr\u0105ja puse.</td>'
+    +   '<td '+R+'>We are pleased to invite you to a special occasion \u2013 the celebration of <b>Akola Group\u2019s 35th anniversary</b>, where we will be delighted to welcome you together with your spouse or partner.</td></tr>'
+    + '<tr><td '+L+'>35 metai \u2013 tai sprendimai, \u017Emon\u0117s ir bendras kelias, kuriuo \u0117jome kartu.</td>'
+    +   '<td '+R+'>35 years is a story of decisions, people, and a shared journey we have taken together.</td></tr>'
+    + '<tr><td '+L+'>J\u016Bs\u0173 buvimas \u2013 svarbi \u0161ios istorijos dalis.</td>'
+    +   '<td '+R+'>Your presence is an important part of this story.</td></tr>'
+    + '<tr><td '+L+'>\ud83d\udcc5 <b>Data:</b> 2026 m. spalio 15 d.<br>\ud83d\udd56 <b>Laikas:</b> nuo 19 val.<br>\ud83d\udccd <b>Vieta:</b> Vilnius</td>'
+    +   '<td '+R+'>\ud83d\udcc5 <b>Date:</b> 15 October 2026<br>\ud83d\udd56 <b>Time:</b> from 7:00 PM<br>\ud83d\udccd <b>Location:</b> Vilnius</td></tr>'
+    + '<tr><td '+L+'><font color=#667>Pra\u0161ome jau dabar rezervuoti \u0161i\u0105 dat\u0105 savo kalendoriuose.</font></td>'
+    +   '<td '+R+'><font color=#667>Please reserve this date in your calendar already now.</font></td></tr>'
+    + '<tr><td '+L+'><font color=#667>I\u0161sami informacija ir registracija bus pateikta v\u0117liau.</font></td>'
+    +   '<td '+R+'><font color=#667>Detailed information and registration will follow at a later stage.</font></td></tr>'
+    + '<tr><td '+L+' style=padding:8px;'+d+'border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Akola group valdybos pirmininkas</font></td>'
+    +   '<td '+R+' style=padding:8px;border-top:1px solid #ccc><b>Darius Zubas</b><br><font color=#19C8E1 size=1>Chairman of the Board, Akola Group</font></td></tr>'
+    + '<tr><td colspan=2 style=background:#193264;padding:8px;text-align:center>'
+    +   '<font color=#19C8E1 size=1>\u00a9 2026 AKOLA GROUP</font>'
+    + '</td></tr></table>';
 
-  window.location.href='https://outlook.office.com/calendar/deeplink/compose'
-    +'?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
-    +'&subject='+encodeURIComponent('Akola Group 35 \u00b7 Kvietimas / Invitation')
-    +'&startdt=2026-10-15T16:00:00Z&enddt=2026-10-15T20:45:00Z'
-    +'&location=Vilnius&body='+encodeURIComponent(b);
+  var deeplink = 'https://outlook.office.com/calendar/deeplink/compose'
+    + '?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
+    + '&subject=' + encodeURIComponent('Akola Group 35 \u00b7 Kvietimas / Invitation')
+    + '&startdt=2026-10-15T16:00:00Z&enddt=2026-10-15T20:45:00Z'
+    + '&location=' + encodeURIComponent('Vilnius')
+    + '&body=' + encodeURIComponent(body);
+
+  var btn = document.getElementById('go');
+  var status = document.getElementById('status');
+  var retry = document.getElementById('retry');
+  var popup = null, timer = null, fired = false;
+
+  function openDeeplink(){
+    if (fired) return;
+    fired = true;
+    status.innerHTML = '<span class="ok">\u2713 Atveriamas kalendorius\u2026 / Opening calendar\u2026</span>';
+    // New tab so the (long) deeplink URL doesn't replace this page.
+    window.open(deeplink, '_blank');
+  }
+
+  btn.onclick = function(){
+    // Step 1: open Outlook Web in a popup. Short URL \u2192 Azure AD login wrap
+    // stays well under the 2 KB cap \u2192 no AADSTS90015.
+    popup = window.open('https://outlook.office.com/mail/', 'akola-signin',
+      'width=560,height=720,menubar=no,toolbar=no,location=yes');
+    if (!popup) {
+      status.textContent = 'I\u0161skleid\u0117jas u\u017Eblokavo lang\u0105. Leiskite i\u0161skleid\u017Eiam\u0105sias ir bandykite dar kart\u0105. / Popup blocked \u2014 please allow popups and retry.';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Laukiama prisijungimo\u2026 / Waiting for sign-in\u2026';
+    status.textContent = 'Prisijunkite lange ir u\u017Edarykite j\u012F. / Sign in in the window, then close it.';
+    retry.style.display = 'block';
+
+    // Step 2: when user closes the popup, we assume sign-in is done \u2192 fire deeplink.
+    timer = setInterval(function(){
+      if (popup.closed){
+        clearInterval(timer);
+        openDeeplink();
+      }
+    }, 400);
+  };
+
+  // Escape hatch for users already signed in, or if popup-close detection didn't fire.
+  retry.onclick = function(){
+    if (timer){ clearInterval(timer); }
+    if (popup && !popup.closed){ try { popup.close(); } catch(e){} }
+    openDeeplink();
+  };
 })();
 </script>
 </body>
