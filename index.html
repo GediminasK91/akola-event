@@ -9,19 +9,13 @@
     .invite{background:#fff;border:1px solid #C8D8E8;}
     .btn{display:block;background:#19C8E1;color:#193264;text-align:center;padding:16px 24px;font-size:15px;font-weight:bold;text-decoration:none;letter-spacing:1px;margin:16px 0;border:none;cursor:pointer;border-radius:4px;}
     .btn:hover{background:#15b5cc;}
-    .state{text-align:center;font-size:12px;color:#556677;margin:10px 0 20px;line-height:1.6;}
-    .ok{color:#193264;font-weight:bold;}
+    .note{text-align:center;font-size:12px;color:#556677;margin:0 0 16px;line-height:1.6;padding:12px;background:#fff;border:1px dashed #19C8E1;}
+    .note b{color:#193264;}
     table{border-collapse:collapse;}
   </style>
 </head>
 <body>
 <div class="wrap">
-
-  <button class="btn" id="btn">📅 ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ</button>
-  <div class="state" id="state">
-    Pirmas paspaudimas — prisijunkite. Antras — pridės į kalendorių.<br>
-    First click — sign in. Second click — adds to your calendar.
-  </div>
 
   <div class="invite">
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -77,18 +71,19 @@
     </table>
   </div>
 
-  <button class="btn" id="btn2">📅 ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ</button>
+  <div class="note">
+    <b>Jei paprašys prisijungti Outlook lange — prisijunkite, grįžkite čia ir paspauskite mygtuką dar kartą.</b><br>
+    If Outlook asks you to sign in — sign in, then come back here and click the button again.
+  </div>
+  <a class="btn" id="btn" href="#">📅 ADD TO CALENDAR / ĮTRAUKTI Į KALENDORIŲ</a>
 
 </div>
 
 <script>
 (function(){
-  // Flag stored in sessionStorage so second click goes straight to compose
-  var signedIn = sessionStorage.getItem('akolaSignedIn') === '1';
-
   var L='valign="top" style="padding:10px 14px;border-right:1px solid #ccc;"';
   var R='valign="top" style="padding:10px 14px;"';
-  var body='<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
+  var b='<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
     +'<tr><td colspan=2 style=background:#193264;padding:20px;text-align:center>'
     +'<font color=#19C8E1 size=2>AKOLA GROUP \u00b7 35</font><br>'
     +'<font color=white size=6><b>KVIETIMAS</b></font><br>'
@@ -116,56 +111,12 @@
     +'<font color=#19C8E1 size=1>\u00a9 2026 AKOLA GROUP</font>'
     +'</td></tr></table>';
 
-  var signInUrl = 'https://outlook.office.com/mail/';
-  var composeUrl = 'https://outlook.office.com/calendar/deeplink/compose'
+  document.getElementById('btn').href =
+    'https://outlook.office.com/calendar/deeplink/compose'
     +'?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
     +'&subject='+encodeURIComponent('Akola Group 35 \u00b7 Kvietimas / Invitation')
     +'&startdt=2026-10-15T16:00:00Z&enddt=2026-10-15T20:45:00Z'
-    +'&location=Vilnius&body='+encodeURIComponent(body);
-
-  var stateEl = document.getElementById('state');
-
-  function setState(html){ stateEl.innerHTML = html; }
-
-  function updateButtonLabel(){
-    if (signedIn){
-      setState('<span class="ok">✓ Prisijungta / Signed in.</span> Spustelėkite dar kartą, kad pridėtumėte renginį. / Click again to add the event.');
-    } else {
-      setState('Pirmas paspaudimas — prisijunkite. Antras — pridės į kalendorių.<br>First click — sign in. Second click — adds to your calendar.');
-    }
-  }
-  updateButtonLabel();
-
-  function openWindow(url){
-    var w = 900, h = 700;
-    var left = Math.max(0, (screen.width - w) / 2);
-    var top  = Math.max(0, (screen.height - h) / 2);
-    return window.open(url, 'akolaOutlook', 'width='+w+',height='+h+',left='+left+',top='+top);
-  }
-
-  function handleClick(){
-    if (!signedIn){
-      // Step 1: open sign-in window
-      var win = openWindow(signInUrl);
-      setState('Prisijunkite Outlook lange, tada uždarykite jį ir spustelėkite mygtuką dar kartą.<br>Sign in in the Outlook window, close it, then click the button again.');
-      // Mark as signed-in once they close the window
-      var t = setInterval(function(){
-        if (!win || win.closed){
-          clearInterval(t);
-          sessionStorage.setItem('akolaSignedIn','1');
-          signedIn = true;
-          updateButtonLabel();
-        }
-      }, 500);
-    } else {
-      // Step 2: open compose
-      openWindow(composeUrl);
-      setState('Kalendoriaus lange spustelėkite <b>Save</b>, kad pridėtumėte renginį.<br>Click <b>Save</b> in the calendar window to add the event.');
-    }
-  }
-
-  document.getElementById('btn').onclick = handleClick;
-  document.getElementById('btn2').onclick = handleClick;
+    +'&location=Vilnius&body='+encodeURIComponent(b);
 })();
 </script>
 
