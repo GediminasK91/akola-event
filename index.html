@@ -2,45 +2,171 @@
 <html lang="lt">
 <head>
 <meta charset="UTF-8">
-<title>Akola Group 35 \u00b7 Kvietimas / Invitation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akola Group 35 · Kvietimas / Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  html,body{margin:0;padding:0;font-family:-apple-system,Segoe UI,Arial,sans-serif;background:#f3f5f8;color:#193264}
-  .wrap{max-width:520px;margin:48px auto;padding:28px;background:#fff;border-radius:10px;box-shadow:0 4px 24px rgba(25,50,100,.08)}
-  .band{background:#193264;color:#fff;margin:-28px -28px 20px;padding:22px 28px;border-radius:10px 10px 0 0;text-align:center}
-  .band .tag{color:#19C8E1;font-size:12px;letter-spacing:2px}
-  .band h1{margin:4px 0 0;font-size:22px;font-weight:600}
-  .band .sub{color:#A8C8E0;font-size:12px;margin-top:2px}
-  p{font-size:14px;line-height:1.5;margin:8px 0;color:#334}
-  button{display:block;width:100%;padding:14px;margin:18px 0 0;font-size:15px;font-weight:600;border:0;border-radius:6px;cursor:pointer;background:#19C8E1;color:#193264;transition:background .15s}
-  button:hover{background:#4bd6ea}
-  button:disabled{background:#bcc4d1;color:#fff;cursor:wait}
-  .status{font-size:12px;color:#667;margin-top:10px;text-align:center;min-height:16px}
-  .retry{display:block;text-align:center;margin-top:12px;font-size:12px;color:#667;text-decoration:underline;cursor:pointer}
-  .retry:hover{color:#193264}
-  .ok{color:#0a7a3a}
+  body{margin:0;padding:0;background:#EDF3F8;font-family:'Roboto',Arial,sans-serif;color:#2A3A55}
+  .outer{width:100%;padding:40px 0}
+  .card{max-width:620px;margin:0 auto;background:#fff;border:1px solid #C8D8E8}
+  .topbar{background:#19C8E1;height:5px;font-size:0;line-height:0}
+  .header{background:#193264;padding:50px 40px 42px;text-align:center}
+  .header .tag{margin:0 0 12px;font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#19C8E1}
+  .header h1{margin:0;font-size:48px;color:#fff;font-weight:700;letter-spacing:1px;font-family:'Poppins',Georgia,serif;line-height:1.15}
+  .header h2{margin:10px 0 0;font-size:20px;color:#A8C8E0;font-weight:300;letter-spacing:5px;font-family:'Poppins',Georgia,serif}
+  .header .rule{width:70px;height:3px;background:#19C8E1;margin:26px auto 0}
+  .dateband{background:#19C8E1;padding:14px 40px;text-align:center}
+  .dateband p{margin:0;font-size:12px;letter-spacing:4px;color:#193264;text-transform:uppercase;font-weight:700}
+  .content{padding:40px 40px 20px}
+  .cols{width:100%;border-collapse:collapse}
+  .cols td.l{width:48%;padding:0 20px 14px 0;border-right:1px solid #C8D8E8;vertical-align:top}
+  .cols td.r{width:48%;padding:0 0 14px 20px;vertical-align:top}
+  .cols td.sp{width:4%}
+  .cols p{margin:0;font-size:14px;color:#2A3A55;line-height:1.85}
+  .cols .greeting p{font-size:15px;color:#193264;font-weight:500}
+  .cols strong{color:#193264}
+  .info{background:#EDF3F8;border-left:3px solid #19C8E1;width:100%;border-collapse:collapse;margin-bottom:10px}
+  .info td{padding:4px 14px;font-size:13px;color:#193264}
+  .info tr:first-child td{padding-top:10px}
+  .info tr:last-child td{padding-bottom:10px}
+  .muted p{font-size:13px;color:#556677;line-height:1.75}
+  .sig{padding:20px 40px 30px}
+  .sig-row{width:100%;border-top:1px solid #C8D8E8;padding-top:24px;display:table;table-layout:fixed}
+  .sig-row .s{display:table-cell;width:50%;vertical-align:top}
+  .sig-row .name{margin:0 0 4px;font-size:17px;font-weight:700;color:#193264;font-family:'Poppins',Georgia,serif}
+  .sig-row .role{margin:0;font-size:12px;color:#19C8E1;letter-spacing:1px;text-transform:uppercase}
+  .cta{padding:28px 40px 36px;text-align:center;border-top:1px solid #C8D8E8}
+  .cta .lbl{margin:0 0 16px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#193264;font-weight:600}
+  .cta button.primary{display:inline-block;background:#19C8E1;color:#193264;padding:14px 36px;font-size:14px;font-weight:700;letter-spacing:1px;border:0;border-radius:4px;font-family:'Roboto',Arial,sans-serif;cursor:pointer;transition:background .15s}
+  .cta button.primary:hover{background:#4bd6ea}
+  .cta button.primary:disabled{background:#A8C8E0;cursor:wait;color:#193264}
+  .status{margin-top:14px;font-size:12px;color:#556677;min-height:16px}
+  .status.ok{color:#0a7a3a;font-weight:500}
+  .retry{display:none;margin-top:8px;font-size:12px;color:#193264;text-decoration:underline;cursor:pointer;background:none;border:0;font-family:inherit}
+  .retry:hover{color:#19C8E1}
+  .footer{background:#193264;padding:18px 40px;text-align:center}
+  .footer p{margin:0;font-size:11px;letter-spacing:2px;color:#19C8E1;text-transform:uppercase}
+  @media (max-width:560px){
+    .outer{padding:0}
+    .card{border:0}
+    .header{padding:36px 20px 30px}
+    .header h1{font-size:36px}
+    .header h2{font-size:16px;letter-spacing:3px}
+    .dateband{padding:12px 20px}
+    .dateband p{font-size:11px;letter-spacing:2px}
+    .content{padding:28px 20px 10px}
+    .cols td.l,.cols td.r{display:block;width:auto;padding:6px 0 14px;border-right:0;border-bottom:1px solid #EDF3F8}
+    .cols tr:last-child td:last-child{border-bottom:0}
+    .cols td.sp{display:none}
+    .sig{padding:16px 20px 22px}
+    .sig-row{display:block}
+    .sig-row .s{display:block;width:auto;margin-bottom:14px}
+    .cta{padding:22px 20px 28px}
+    .cta button.primary{padding:14px 22px;font-size:13px;width:100%;box-sizing:border-box}
+    .footer{padding:16px 20px}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="band">
-    <div class="tag">AKOLA GROUP \u00b7 35</div>
-    <h1>KVIETIMAS / INVITATION</h1>
-    <div class="sub">2026 m. spalio 15 d. \u00b7 15 October 2026 \u00b7 Vilnius</div>
+  <div class="outer">
+    <div class="card">
+      <div class="topbar">&nbsp;</div>
+
+      <div class="header">
+        <p class="tag">Akola Group &middot; 35</p>
+        <h1>KVIETIMAS</h1>
+        <h2>INVITATION</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="dateband">
+        <p>2026 m. spalio 15 d. &nbsp;&middot;&nbsp; 15 October 2026 &nbsp;&middot;&nbsp; Vilnius</p>
+      </div>
+
+      <div class="content">
+        <table class="cols">
+          <tr class="greeting">
+            <td class="l"><p>Gerbiamieji,</p></td>
+            <td class="sp"></td>
+            <td class="r"><p>Dear colleagues,</p></td>
+          </tr>
+          <tr>
+            <td class="l"><p>maloniai kviečiame į ypatingą progą &mdash; <strong>Akola group 35-ojo jubiliejaus</strong> minėjimą, kuriame lauksime Jūsų kartu su Jūsų antrąja puse.</p></td>
+            <td class="sp"></td>
+            <td class="r"><p>we are pleased to invite you to a special occasion &mdash; the celebration of <strong>Akola Group&rsquo;s 35th anniversary</strong>, where we will be delighted to welcome you together with your spouse or partner.</p></td>
+          </tr>
+          <tr>
+            <td class="l"><p>35 metai &mdash; tai sprendimai, žmonės ir bendras kelias, kuriuo ėjome kartu.</p></td>
+            <td class="sp"></td>
+            <td class="r"><p>35 years is a story of decisions, people, and a shared journey we have taken together.</p></td>
+          </tr>
+          <tr>
+            <td class="l"><p>Jūsų buvimas &mdash; svarbi šios istorijos dalis.</p></td>
+            <td class="sp"></td>
+            <td class="r"><p>Your presence is an important part of this story.</p></td>
+          </tr>
+          <tr>
+            <td class="l">
+              <table class="info">
+                <tr><td>&#128197; <strong>Data:</strong> 2026 m. spalio 15 d.</td></tr>
+                <tr><td>&#128342; <strong>Laikas:</strong> nuo 19 val.</td></tr>
+                <tr><td>&#128205; <strong>Vieta:</strong> Vilnius</td></tr>
+              </table>
+            </td>
+            <td class="sp"></td>
+            <td class="r">
+              <table class="info">
+                <tr><td>&#128197; <strong>Date:</strong> 15 October 2026</td></tr>
+                <tr><td>&#128342; <strong>Time:</strong> from 7:00 PM</td></tr>
+                <tr><td>&#128205; <strong>Location:</strong> Vilnius</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="muted">
+            <td class="l"><p>Prašome jau dabar rezervuoti šią datą savo kalendoriuose.</p></td>
+            <td class="sp"></td>
+            <td class="r"><p>Please reserve this date in your calendar already now.</p></td>
+          </tr>
+          <tr class="muted">
+            <td class="l"><p>Išsami informacija ir registracija bus pateikta vėliau.</p></td>
+            <td class="sp"></td>
+            <td class="r"><p>Detailed information and registration will follow at a later stage.</p></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sig">
+        <div class="sig-row">
+          <div class="s">
+            <p class="name">Darius Zubas</p>
+            <p class="role">Akola group valdybos pirmininkas</p>
+          </div>
+          <div class="s">
+            <p class="name">Darius Zubas</p>
+            <p class="role">Chairman of the Board, Akola Group</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p class="lbl">Save the Date &nbsp;&middot;&nbsp; Išsisaugokite šį renginį savo kalendoriuje</p>
+        <button class="primary" id="go">&#128197;&ensp;Add to Calendar &nbsp;/&nbsp; Įtraukti į kalendorių</button>
+        <div class="status" id="status">&nbsp;</div>
+        <button class="retry" id="retry">Jau prisijungęs? Pridėti dabar. / Already signed in? Add now.</button>
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2026 Akola Group &nbsp;&middot;&nbsp; All rights reserved</p>
+      </div>
+    </div>
   </div>
-
-  <p><b>LT:</b> Paspauskite mygtuk\u0105, prisijunkite prie <i>Outlook</i> atsidariusiame lange ir j\u012F u\u017Edarykite \u2014 renginys bus prid\u0117tas automati\u0161kai.</p>
-  <p><b>EN:</b> Click the button, sign in to <i>Outlook</i> in the window that opens, then close it \u2014 the event will be added automatically.</p>
-
-  <button id="go">Prid\u0117ti \u012F kalendori\u0173 / Add to calendar</button>
-
-  <div class="status" id="status">&nbsp;</div>
-
-  <a class="retry" id="retry" style="display:none">Jau prisijung\u0119s? Prid\u0117ti dabar. / Already signed in? Add now.</a>
-</div>
 
 <script>
 (function(){
-  // ---- Full bilingual HTML body (fits because we ensure the user is signed in first) ----
+  // ---- Full bilingual HTML body used in the Outlook deeplink body= param ----
+  // Kept in JS so the \uXXXX escapes are decoded at runtime (unlike in HTML text).
   var d='border-right:1px solid #ccc;', p='valign=top style=padding:8px;';
   var L = p + d, R = p;
   var body = '<table align=center width=600 cellpadding=0 cellspacing=0 style="margin:0 auto">'
@@ -78,34 +204,33 @@
     + '&location=' + encodeURIComponent('Vilnius')
     + '&body=' + encodeURIComponent(body);
 
-  var btn = document.getElementById('go');
+  var btn    = document.getElementById('go');
   var status = document.getElementById('status');
-  var retry = document.getElementById('retry');
+  var retry  = document.getElementById('retry');
   var popup = null, timer = null, fired = false;
 
   function openDeeplink(){
     if (fired) return;
     fired = true;
-    status.innerHTML = '<span class="ok">\u2713 Atveriamas kalendorius\u2026 / Opening calendar\u2026</span>';
-    // New tab so the (long) deeplink URL doesn't replace this page.
+    status.className = 'status ok';
+    status.textContent = '\u2713 Atveriamas kalendorius\u2026 / Opening calendar\u2026';
+    // New tab so the long deeplink URL doesn't replace this page.
     window.open(deeplink, '_blank');
   }
 
   btn.onclick = function(){
-    // Step 1: open Outlook Web in a popup. Short URL \u2192 Azure AD login wrap
-    // stays well under the 2 KB cap \u2192 no AADSTS90015.
+    // Short URL \u2013 Azure AD login wrap stays well under the 2 KB cap \u2192 no AADSTS90015.
     popup = window.open('https://outlook.office.com/mail/', 'akola-signin',
       'width=560,height=720,menubar=no,toolbar=no,location=yes');
     if (!popup) {
-      status.textContent = 'I\u0161skleid\u0117jas u\u017Eblokavo lang\u0105. Leiskite i\u0161skleid\u017Eiam\u0105sias ir bandykite dar kart\u0105. / Popup blocked \u2014 please allow popups and retry.';
+      status.textContent = 'Iššok\u017Ei lango atidaryti negalima. Leiskite išskleidžiamuosius langus ir bandykite dar kartą. / Popup was blocked \u2014 please allow popups and retry.';
       return;
     }
     btn.disabled = true;
     btn.textContent = 'Laukiama prisijungimo\u2026 / Waiting for sign-in\u2026';
-    status.textContent = 'Prisijunkite lange ir u\u017Edarykite j\u012F. / Sign in in the window, then close it.';
-    retry.style.display = 'block';
+    status.textContent = 'Prisijunkite lange ir uždarykite jį. / Sign in in the window, then close it.';
+    retry.style.display = 'inline-block';
 
-    // Step 2: when user closes the popup, we assume sign-in is done \u2192 fire deeplink.
     timer = setInterval(function(){
       if (popup.closed){
         clearInterval(timer);
@@ -114,7 +239,6 @@
     }, 400);
   };
 
-  // Escape hatch for users already signed in, or if popup-close detection didn't fire.
   retry.onclick = function(){
     if (timer){ clearInterval(timer); }
     if (popup && !popup.closed){ try { popup.close(); } catch(e){} }
