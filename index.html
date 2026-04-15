@@ -214,8 +214,11 @@
     fired = true;
     status.className = 'status ok';
     status.textContent = '\u2713 Atveriamas kalendorius\u2026 / Opening calendar\u2026';
-    // New tab so the long deeplink URL doesn't replace this page.
-    window.open(deeplink, '_blank');
+    // Close the sign-in popup if still open.
+    if (popup && !popup.closed) { try { popup.close(); } catch(e){} }
+    // Use location.href (not window.open) so the async callback isn't blocked
+    // by popup blockers. Navigating the current tab is always allowed.
+    window.location.href = deeplink;
   }
 
   btn.onclick = function(){
